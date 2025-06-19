@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Customer Login - Local Market</title>
+  <link rel="stylesheet" href="style.css"/>
+  <style>
+    .auth-tabs { display: flex; justify-content: center; gap: 1.5rem; margin-bottom: 2rem; }
+    .auth-tab { font-weight: 700; color: #3c17f3; background: none; border: none; font-size: 1.1rem; cursor: pointer; padding: 0.5rem 1.2rem; border-radius: 8px; transition: background 0.2s, color 0.2s; }
+    .auth-tab.active, .auth-tab:focus { background: #f3eaff; color: #ff9800; outline: none; }
+    .auth-form { display: none; }
+    .auth-form.active { display: block; }
+    .forgot-link { color: #3c17f3; text-decoration: underline; cursor: pointer; font-size: 0.98rem; }
+    .forgot-link:hover { color: #ff9800; }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="logo"><span class="logo-icon"> 
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61l1.38-7.39H6"/></svg>
+    </span><span class="logo-text">localmarket</span></div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="categories.html">Categories</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+
+  </nav>
+
+  <section id="login" style="max-width: 400px; margin: 3rem auto; background: var(--nav-bg); padding: 2rem; border-radius: 16px; box-shadow: 0 4px 16px rgba(0,0,0,0.08);">
+    <div class="auth-tabs">
+      <button class="auth-tab active" id="loginTab">Login</button>
+      <button class="auth-tab" id="registerTab">Register</button>
+    </div>
+    <form id="loginForm" class="auth-form active">
+      <label for="login-email">Email</label>
+      <input type="email" id="login-email" name="email" required style="width:100%;padding:0.5rem;margin-bottom:1rem;border-radius:6px;border:1.5px solid #ccc;">
+      <label for="login-password">Password</label>
+      <input type="password" id="login-password" name="password" required style="width:100%;padding:0.5rem;margin-bottom:1rem;border-radius:6px;border:1.5px solid #ccc;">
+      <button type="submit" style="width:100%;padding:0.75rem;background:#3c17f3;color:#fff;font-weight:bold;border:none;border-radius:6px;cursor:pointer;">Login</button>
+      <div style="text-align:center;margin-top:1.2rem;">
+        <span class="forgot-link" id="showForgot">Forgot password?</span>
+      </div>
+    </form>
+    <form id="registerForm" class="auth-form">
+      <label for="register-name">Name</label>
+      <input type="text" id="register-name" name="name" required style="width:100%;padding:0.5rem;margin-bottom:1rem;border-radius:6px;border:1.5px solid #ccc;">
+      <label for="register-email">Email</label>
+      <input type="email" id="register-email" name="email" required style="width:100%;padding:0.5rem;margin-bottom:1rem;border-radius:6px;border:1.5px solid #ccc;">
+      <label for="register-password">Password</label>
+      <input type="password" id="register-password" name="password" required style="width:100%;padding:0.5rem;margin-bottom:1rem;border-radius:6px;border:1.5px solid #ccc;">
+      <label for="register-confirm">Confirm Password</label>
+      <input type="password" id="register-confirm" name="confirm" required style="width:100%;padding:0.5rem;margin-bottom:1rem;border-radius:6px;border:1.5px solid #ccc;">
+      <button type="submit" style="width:100%;padding:0.75rem;background:#ff9800;color:#fff;font-weight:bold;border:none;border-radius:6px;cursor:pointer;">Register</button>
+    </form>
+    <form id="forgotForm" class="auth-form">
+      <label for="forgot-email">Enter your email to reset password</label>
+      <input type="email" id="forgot-email" name="forgot-email" required style="width:100%;padding:0.5rem;margin-bottom:1rem;border-radius:6px;border:1.5px solid #ccc;">
+      <button type="submit" style="width:100%;padding:0.75rem;background:#3c17f3;color:#fff;font-weight:bold;border:none;border-radius:6px;cursor:pointer;">Send Reset Link</button>
+      <div style="text-align:center;margin-top:1.2rem;">
+        <span class="forgot-link" id="backToLogin">Back to Login</span>
+      </div>
+    </form>
+  </section>
+
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-about">
+        <h3>local market</h3>
+        <p>Groceries Home delivered. Your one-stop shop for fresh produce, snacks, and daily essentials.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="categories.html">Categories</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <h4>Contact</h4>
+        <p>Email:localmarket@gmail.com</p>
+        <p>Phone: 9966284758</p>
+      </div>
+    </div>
+  </footer>
+  <script src="script.js"></script>
+  <script>
+    // Tab switching logic
+    const loginTab = document.getElementById('loginTab');
+    const registerTab = document.getElementById('registerTab');
+    const loginForm = document.getElementById('loginForm');
+    const registerForm = document.getElementById('registerForm');
+    const forgotForm = document.getElementById('forgotForm');
+    const showForgot = document.getElementById('showForgot');
+    const backToLogin = document.getElementById('backToLogin');
+
+    loginTab.onclick = function() {
+      loginTab.classList.add('active');
+      registerTab.classList.remove('active');
+      loginForm.classList.add('active');
+      registerForm.classList.remove('active');
+      forgotForm.classList.remove('active');
+    };
+    registerTab.onclick = function() {
+      registerTab.classList.add('active');
+      loginTab.classList.remove('active');
+      registerForm.classList.add('active');
+      loginForm.classList.remove('active');
+      forgotForm.classList.remove('active');
+    };
+    showForgot.onclick = function() {
+      loginForm.classList.remove('active');
+      forgotForm.classList.add('active');
+    };
+    backToLogin.onclick = function() {
+      forgotForm.classList.remove('active');
+      loginForm.classList.add('active');
+    };
+  </script>
+</body>
+</html> 

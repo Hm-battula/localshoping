@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>local market</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+  <!-- Loader Magic -->
+  <div id="loader-magic">
+    <div class="magic-spinner"></div>
+    <div class="magic-text">Loading Magic...</div>
+  </div>
+
+  <!-- Loader -->
+  <div id="loader">
+    <img src="assets/loader.gif" alt="Loading..." />
+  </div>
+
+  <!-- Navbar -->
+  <nav>
+    <div class="logo"><span class="logo-icon"> 
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61l1.38-7.39H6"/></svg>
+    </span><span class="logo-text">localmarket</span></div>
+    <ul class="nav-links">
+      <li><a href="#hero">Home</a></li>
+      <li><a href="categories.html">Categories</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="customer-login.html">Login</a></li>
+      <li><a href="add-to-cart.html"><span style="display:inline-flex;align-items:center;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3c17f3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right:6px;"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61l1.38-7.39H6"/></svg> Add to Cart</span></a></li>
+      
+    </ul>
+    <button id="modeToggle">🌙</button>
+  </nav>
+
+  <!-- Hero Section inspired by Blinkit with full background image -->
+  <section id="hero" class="blinkit-hero hero-bg-image">
+    <div class="hero-overlay"></div>
+    <div class="hero-content-wrapper">
+      <div class="hero-left">
+        <h1>Groceries home delivered </h1>
+        <p>stationary, fancy,supermarket,foods</p>
+        <form class="hero-search" onsubmit="return false;">
+          <input type="text" placeholder="Search for products, brands and more..." />
+          <button type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Categories -->
+  <section id="categories">
+    <h2>Popular Categories</h2>
+    <div class="cards">
+      <div class="card"><img src="images/stationary.webp" class="enlargeable"/><p><a href="categories.html#stationary" class="card-link">stationary</a></p></div>
+      <div class="card"><img src="images/fancy.webp" class="enlargeable"/><p><a href="categories.html#fancy" class="card-link">fancy</a></p></div>
+      <div class="card"><img src="images/supermarket.webp" class="enlargeable"/><p><a href="categories.html#supermarket" class="card-link">supermarket</a></p></div>
+      <div class="card"><img src="images/food.webp" class="enlargeable"/><p><a href="categories.html#food" class="card-link">food</a></p></div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer id="contact">
+   
+  </footer>
+
+  <!-- Modal for enlarged image -->
+  <div id="imageModal">
+    <img src="" alt="Enlarged" />
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-about">
+        <h3>local market</h3>
+        <p>Groceries Home delivered. Your one-stop shop for fresh produce, snacks, and daily essentials.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="categories.html">Categories</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <h4>Contact</h4>
+        <p>Email:localmarket@gmail.com</p>
+        <p>Phone: 9966284758</p>
+      </div>
+    </div>
+    
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
